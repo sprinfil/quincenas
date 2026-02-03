@@ -1,0 +1,18 @@
+{
+  "detalles": [
+    {
+      "base": 2400,
+      "disponible": 2400,
+      "porcentaje": 20,
+      "titulo": "Inversiones"
+    },
+    {
+      "base": 6000,
+      "disponible": 6000,
+      "porcentaje": 50,
+      "titulo": "Gastos fijos"
+    },
+    { "base": 3600, "disponible": 3350, "porcentaje": 30, "titulo": "Gustos" }
+  ],
+  "quincena": { "fecha_fin": null, "fecha_inicio": "2026-02-03", "id": 1 }
+}

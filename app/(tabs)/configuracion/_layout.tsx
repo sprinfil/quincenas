@@ -7,10 +7,7 @@ export default function ConfiguracionLayout() {
         name="index"
         options={{ title: "Configuración", headerShown: false }}
       />
-      <Stack.Screen
-        name="ingresoQuincenal"
-        options={{ title: "Ingreso quincenal" }}
-      />
+      <Stack.Screen name="ingresoQuincenal" options={{ title: "Ingreso" }} />
       <Stack.Screen name="categorias" options={{ title: "Categorias" }} />
       <Stack.Screen name="conceptos" options={{ title: "Conceptos" }} />
     </Stack>

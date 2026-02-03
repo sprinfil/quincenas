@@ -2,7 +2,9 @@ import { db } from "@/db/database";
 import { ConceptoConCategoria } from "./conceptos.types";
 
 export const useGetConceptoById = () => {
-  const getConceptoById = (id: number): ConceptoConCategoria | null => {
+  const getConceptoById = (
+    id: number | string,
+  ): ConceptoConCategoria | null => {
     if (!id) return null;
 
     const concepto = db.getFirstSync<ConceptoConCategoria>(
@@ -17,7 +19,7 @@ export const useGetConceptoById = () => {
       WHERE c.id = ?
       LIMIT 1
       `,
-      [id]
+      [id],
     );
 
     return concepto ?? null;

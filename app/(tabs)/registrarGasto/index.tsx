@@ -1,10 +1,9 @@
 import { ThemedText } from "@/components/themed-text";
-import ContainerView from "@/components/ui/ContainerView";
+import Container from "@/components/ui/container";
 import Input from "@/components/ui/Input";
 import { ConceptoConCategoria } from "@/hooks/Conceptos/conceptos.types";
 import { useGetConceptos } from "@/hooks/Conceptos/useGetConceptos";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 import { router, useFocusEffect } from "expo-router";
 import React, { useMemo, useState } from "react";
@@ -36,7 +35,7 @@ const conceptos = () => {
   }, [conceptos, search]);
 
   return (
-    <ContainerView>
+    <Container>
       <View style={styles.searchContainer}>
         <Input
           style={{ flex: 1 }}
@@ -44,7 +43,7 @@ const conceptos = () => {
           value={search}
           onChangeText={setSearch}
         />
-        <Pressable
+        {/* <Pressable
           onPress={() => {
             router.push("/configuracion/conceptos/crearConcepto");
           }}
@@ -56,7 +55,7 @@ const conceptos = () => {
               color={colorScheme == "dark" ? "white" : "black"}
             />
           </View>
-        </Pressable>
+        </Pressable> */}
       </View>
       <View style={{ marginTop: 20, flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -65,9 +64,9 @@ const conceptos = () => {
               key={concepto.id}
               onPress={() => {
                 router.push({
-                  pathname: "/configuracion/conceptos/editarConcepto",
+                  pathname: "/registrarGasto/registrarMonto",
                   params: {
-                    id: concepto.id,
+                    concepto_id: concepto.id,
                   },
                 });
               }}
@@ -91,17 +90,17 @@ const conceptos = () => {
                   </ThemedText>
                 </View>
 
-                <MaterialCommunityIcons
-                  name="pencil-outline"
+                <Ionicons
+                  name="arrow-forward-circle-outline"
                   size={24}
-                  color="#6b7280"
+                  color={colorScheme == "dark" ? "white" : "black"}
                 />
               </View>
             </Pressable>
           ))}
         </ScrollView>
       </View>
-    </ContainerView>
+    </Container>
   );
 };
 

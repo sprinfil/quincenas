@@ -3,7 +3,7 @@ import { Colors } from "@/constants/theme";
 import { StyleSheet, useColorScheme } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Quincenas() {
+export default function Reportes() {
   const colorScheme = useColorScheme();
   return (
     <>
@@ -14,7 +14,7 @@ export default function Quincenas() {
         ]}
       >
         <ThemedText style={styles.titleContainer} type="title">
-          Quincenas
+          Reportes
         </ThemedText>
       </SafeAreaView>
     </>

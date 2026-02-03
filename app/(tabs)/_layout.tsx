@@ -3,7 +3,7 @@ import { IconSymbol } from "@/components/ui/icon-symbol";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import Entypo from "@expo/vector-icons/Entypo";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Foundation from "@expo/vector-icons/Foundation";
 import Octicons from "@expo/vector-icons/Octicons";
 import { Tabs } from "expo-router";
 import React from "react";
@@ -38,11 +38,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="quincenas"
+        name="reportes"
         options={{
-          title: "Quincenas",
+          title: "Reportes",
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="attach-money" size={28} color={color} />
+            <Foundation name="graph-pie" size={28} color={color} />
           ),
         }}
       />

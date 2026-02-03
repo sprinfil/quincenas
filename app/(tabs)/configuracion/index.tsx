@@ -24,7 +24,7 @@ export default function Configuracion() {
             onPress={() => router.push("/configuracion/ingresoQuincenal")}
           >
             <View style={styles.buttonConfig}>
-              <ThemedText type="default">Ingreso quincenal</ThemedText>
+              <ThemedText type="default">Ingreso</ThemedText>
               <Ionicons
                 name="arrow-forward-circle-outline"
                 size={24}
