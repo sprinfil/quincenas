@@ -3,3 +3,8 @@ export type Categoria = {
   nombre: string;
   porcentaje: number;
 };
+
+export type CategoriaFormProps = {
+  nombre: string | undefined;
+  porcentaje: number | undefined;
+};

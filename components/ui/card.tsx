@@ -24,7 +24,6 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 const cardStyles = StyleSheet.create({
   container: {
     width: "100%",
-    height: "auto",
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 4,

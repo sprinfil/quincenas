@@ -12,6 +12,7 @@ export const useGetQuincenaActivaConConf = () => {
         q.id            AS quincena_id,
         q.fecha_inicio,
         q.fecha_fin,
+        q.ingreso,
 
         qc.id           AS config_id,
         qc.categoria_id,
@@ -30,6 +31,7 @@ export const useGetQuincenaActivaConConf = () => {
       id: rows[0].quincena_id,
       fecha_inicio: rows[0].fecha_inicio,
       fecha_fin: rows[0].fecha_fin,
+      ingreso: Number(rows[0].ingreso),
       configuraciones: [],
     };
 

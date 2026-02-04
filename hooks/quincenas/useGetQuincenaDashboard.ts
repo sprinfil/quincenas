@@ -56,6 +56,7 @@ export const useGetQuincenaDashboard = () => {
           id: quincenaActiva.id,
           fecha_inicio: quincenaActiva.fecha_inicio,
           fecha_fin: quincenaActiva.fecha_fin,
+          ingreso:quincenaActiva?.ingreso
         },
         detalles,
       };

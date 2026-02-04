@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 
 import { ThemedText } from "@/components/themed-text";
 import Button from "@/components/ui/Button";
@@ -66,9 +66,15 @@ export default function HomeScreen() {
               paddingBottom: 40,
             }}
           >
-            <ThemedText type="subtitle" style={{ marginBottom: 20 }}>
-              Inicio de periodo {formatDate(dashboard.quincena.fecha_inicio)}
-            </ThemedText>
+            <View style={{ marginBottom: 20 }}>
+              <ThemedText type="title">Resumen</ThemedText>
+              <ThemedText type="subtitle" style={{ opacity: 0.7 }}>
+                Iniciada el {formatDate(dashboard.quincena.fecha_inicio)}
+              </ThemedText>
+              <ThemedText type="subtitle" style={{ opacity: 0.7 }}>
+                Ingreso {formatPesos(dashboard.quincena?.ingreso ?? 0)}
+              </ThemedText>
+            </View>
 
             <View style={{ marginBottom: 30 }}>
               <Button
@@ -84,31 +90,66 @@ export default function HomeScreen() {
               />
             </View>
 
-            <View style={{ gap: 10 }}>
+            <View style={{ flex: 1, gap: 12, paddingBottom: 40 }}>
               {dashboard.detalles?.map((detalle, index) => (
-                <Card key={index}>
-                  <View style={{ paddingVertical: 10 }}>
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <ThemedText type="subtitle">{detalle.titulo}</ThemedText>
-                      <ThemedText type="subtitle">
-                        {detalle.porcentaje} %
-                      </ThemedText>
-                    </View>
+                <Pressable key={index}>
+                  <Card key={index}>
+                    <View style={{ gap: 6, paddingTop: 10, paddingBottom: 10 }}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <ThemedText type="subtitle">
+                          {detalle.titulo}
+                        </ThemedText>
+                        <ThemedText style={{ opacity: 0.7 }}>
+                          {detalle.porcentaje}%
+                        </ThemedText>
+                      </View>
 
-                    <ThemedText>Base: {formatPesos(detalle.base)}</ThemedText>
-                    <ThemedText>
-                      Gastado: {formatPesos(detalle.totalGastado)}
-                    </ThemedText>
-                    <ThemedText style={{ marginTop: 20 }}>
-                      Disponible: {formatPesos(detalle.disponible)}
-                    </ThemedText>
-                  </View>
-                </Card>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <ThemedText>Base</ThemedText>
+                        <ThemedText>{formatPesos(detalle.base)}</ThemedText>
+                      </View>
+
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <ThemedText>Gastado</ThemedText>
+                        <ThemedText style={{ color: "#ef4444" }}>
+                          {formatPesos(detalle.totalGastado)}
+                        </ThemedText>
+                      </View>
+
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          marginTop: 6,
+                        }}
+                      >
+                        <ThemedText>Disponible</ThemedText>
+                        <ThemedText
+                          type="subtitle"
+                          style={{ color: "#22c55e" }}
+                        >
+                          {formatPesos(detalle.disponible)}
+                        </ThemedText>
+                      </View>
+                    </View>
+                  </Card>
+                </Pressable>
               ))}
             </View>
           </ScrollView>

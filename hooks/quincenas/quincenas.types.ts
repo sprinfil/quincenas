@@ -7,7 +7,7 @@ export type Quincena = {
 
 export type QuincenaConfiguracion = {
   id: number;
-  quincena_id: number;
+  quincena_id: number | string;
   categoria_id: number;
   nombre: string;
   porcentaje: number;
