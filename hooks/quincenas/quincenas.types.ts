@@ -22,6 +22,8 @@ export type DashboardCategoria = {
 };
 
 export type QuincenaDashboardResponse = {
-  quincena: Quincena;
+  quincena: Quincena & {
+    totalGastado: number;
+  };
   detalles: DashboardCategoria[];
 };

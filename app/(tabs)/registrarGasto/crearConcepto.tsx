@@ -1,13 +1,13 @@
 import ConceptoForm from "@/components/ui/conceptoForm/conceptoForm";
-import ContainerView from "@/components/ui/ContainerView";
+import Container from "@/components/ui/container";
 import React from "react";
 
 const crearConcepto = () => {
   return (
     <>
-      <ContainerView>
+      <Container>
         <ConceptoForm />
-      </ContainerView>
+      </Container>
     </>
   );
 };

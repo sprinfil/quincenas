@@ -27,6 +27,7 @@ export const useGetQuincenaDashboard = () => {
 
       const gastos = await getGastosByQuincenaId(quincenaActiva.id);
       const ingresoQuincenal = getIngresoQuincenal();
+      const totalGastado = gastos.reduce((sum, gasto) => sum + gasto.monto, 0);
 
       const detalles: DashboardCategoria[] = [];
 
@@ -56,7 +57,8 @@ export const useGetQuincenaDashboard = () => {
           id: quincenaActiva.id,
           fecha_inicio: quincenaActiva.fecha_inicio,
           fecha_fin: quincenaActiva.fecha_fin,
-          ingreso:quincenaActiva?.ingreso
+          ingreso: quincenaActiva?.ingreso,
+          totalGastado: totalGastado,
         },
         detalles,
       };

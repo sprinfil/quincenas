@@ -11,6 +11,10 @@ export default function ConfiguracionLayout() {
         name="registrarMonto"
         options={{ title: "Ingreso", headerShown: false }}
       />
+      <Stack.Screen
+        name="crearConcepto"
+        options={{ title: "Ingreso", headerShown: false }}
+      />
     </Stack>
   );
 }

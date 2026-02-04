@@ -3,6 +3,7 @@ import Container from "@/components/ui/container";
 import Input from "@/components/ui/Input";
 import { ConceptoConCategoria } from "@/hooks/Conceptos/conceptos.types";
 import { useGetConceptos } from "@/hooks/Conceptos/useGetConceptos";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 import { router, useFocusEffect } from "expo-router";
@@ -43,9 +44,9 @@ const conceptos = () => {
           value={search}
           onChangeText={setSearch}
         />
-        {/* <Pressable
+        <Pressable
           onPress={() => {
-            router.push("/configuracion/conceptos/crearConcepto");
+            router.push("/registrarGasto/crearConcepto");
           }}
         >
           <View style={{ paddingLeft: 10 }}>
@@ -55,7 +56,7 @@ const conceptos = () => {
               color={colorScheme == "dark" ? "white" : "black"}
             />
           </View>
-        </Pressable> */}
+        </Pressable>
       </View>
       <View style={{ marginTop: 20, flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>

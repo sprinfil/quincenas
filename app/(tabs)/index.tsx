@@ -74,6 +74,10 @@ export default function HomeScreen() {
               <ThemedText type="subtitle" style={{ opacity: 0.7 }}>
                 Ingreso {formatPesos(dashboard.quincena?.ingreso ?? 0)}
               </ThemedText>
+              <ThemedText type="subtitle" style={{ opacity: 0.7 }}>
+                Total gastado{" "}
+                {formatPesos(dashboard.quincena?.totalGastado ?? 0)}
+              </ThemedText>
             </View>
 
             <View style={{ marginBottom: 30 }}>
