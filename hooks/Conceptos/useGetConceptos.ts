@@ -11,6 +11,7 @@ export const useGetConceptos = () => {
         cat.nombre AS categoria_nombre
       FROM conceptos c
       INNER JOIN categorias cat ON cat.id = c.categoria_id
+      where c.deleted_at is null
       ORDER BY c.id DESC
     `);
   };

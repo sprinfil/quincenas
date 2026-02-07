@@ -1,4 +1,5 @@
 import { db } from "./database";
+import { runMigrations } from "./migrations";
 import { seedDatabase } from "./seedDataBase";
 
 export function initDatabase() {
@@ -32,8 +33,7 @@ export function initDatabase() {
     CREATE TABLE IF NOT EXISTS quincenas (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       fecha_inicio TEXT NOT NULL,
-      fecha_fin TEXT,
-      ingreso REAL NOT NULL DEFAULT 0
+      fecha_fin TEXT
     );
 
     -- QUINCENA_CONFIGURACION
@@ -66,6 +66,6 @@ export function initDatabase() {
     );
   `);
 
-  // runMigrations();
+  runMigrations();
   seedDatabase();
 }

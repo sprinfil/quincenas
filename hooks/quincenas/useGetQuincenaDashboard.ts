@@ -44,6 +44,7 @@ export const useGetQuincenaDashboard = () => {
         const base = ingresoQuincenal * (configuracion.porcentaje / 100);
 
         detalles.push({
+          id: configuracion?.id,
           titulo: configuracion.nombre,
           porcentaje: configuracion.porcentaje,
           base,

@@ -2,8 +2,8 @@ import { db } from "./database";
 
 export function seedDatabase() {
   const version =
-    db.getFirstSync<{ user_version: number }>("PRAGMA user_version")
-      ?.user_version ?? 0;
+    db.getFirstSync<{ application_id: number }>("PRAGMA application_id")
+      ?.application_id ?? 0;
 
   if (version < 1) {
     console.log("🌱 Ejecutando seeders...");
@@ -27,6 +27,6 @@ export function seedDatabase() {
       ]);
     });
 
-    db.execSync("PRAGMA user_version = 1");
+    db.execSync("PRAGMA application_id = 1");
   }
 }

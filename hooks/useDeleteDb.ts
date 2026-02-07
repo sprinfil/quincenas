@@ -15,6 +15,7 @@ export function deleteDatabase() {
     DROP TABLE IF EXISTS configuracion;
 
     PRAGMA user_version = 0;
+    PRAGMA application_id = 0;
     PRAGMA foreign_keys = ON;
   `);
 

@@ -23,7 +23,7 @@ export const useCrearCategoria = () => {
       total: number | null;
     }>(`
       SELECT SUM(porcentaje) AS total
-      FROM categorias
+      FROM categorias where deleted_at is null
     `);
 
     const totalActual = Number(result?.total ?? 0);

@@ -2,7 +2,8 @@ import { db } from "@/db/database";
 
 export const useCreateQuincena = () => {
   const createQuincena = () => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toLocaleDateString("en-CA");
+
 
     db.runSync("BEGIN TRANSACTION");
 
@@ -65,7 +66,7 @@ export const useCreateQuincena = () => {
         porcentaje: number;
       }>(`
         SELECT id, nombre, porcentaje
-        FROM categorias
+        FROM categorias where deleted_at is null
       `);
 
       // 6️⃣ Crear configuracion por categoria para la quincena

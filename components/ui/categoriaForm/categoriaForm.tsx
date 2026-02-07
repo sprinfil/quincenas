@@ -30,7 +30,9 @@ const CategoriaForm = ({
   });
 
   useEffect(() => {
-    getCategoria();
+    if (categoria_id) {
+      getCategoria();
+    }
   }, [categoria_id]);
 
   const getCategoria = async () => {

@@ -14,6 +14,7 @@ export type QuincenaConfiguracion = {
 };
 
 export type DashboardCategoria = {
+  id: number | string
   titulo: string;
   porcentaje: number;
   base: number;

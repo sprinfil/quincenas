@@ -4,7 +4,7 @@ import { Categoria } from "./categorias.types";
 export function useGetCategorias() {
   const getCategorias = (): Categoria[] => {
     const result = db.getAllSync<Categoria>(
-      "SELECT * FROM categorias ORDER BY id ASC"
+      "SELECT * FROM categorias WHERE deleted_at IS NULL ORDER BY id DESC"
     );
     return result;
   };
